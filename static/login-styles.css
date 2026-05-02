@@ -1,0 +1,179 @@
+/* ========================= PALETTE (never changes) ========================= */
+:root {
+	--color-base-graphite: #363636;
+	--color-base-jetblack: #242F40;
+	--color-base-goldenbronze: #CCA43B;
+	--color-base-alabaster: #E5E5E5;
+	/* ========================= SEMANTIC ROLES — DARK MODE ========================= */
+	--color-bg-app: var(--color-base-jetblack);
+	--color-bg-surface: var(--color-base-graphite);
+	--color-fg-primary: var(--color-base-alabaster);
+	--color-fg-muted: var(--color-base-graphite);
+	--color-surface-message-own: var(--color-base-goldenbronze);
+	--color-fg-message-own: var(--color-base-jetblack);
+	--color-surface-message-other: var(--color-base-alabaster);
+	--color-fg-message-other: var(--color-base-graphite);
+	--color-accent-primary: var(--color-base-goldenbronze);
+	--color-accent-primary-hover: #b99330;
+	--color-accent-contrast: var(--color-base-jetblack);
+}
+
+/* ========================= SEMANTIC ROLES — LIGHT MODE ========================= */
+.lightmode {
+	--color-bg-app: var(--color-base-alabaster);
+	--color-bg-surface: #ffffff;
+	--color-fg-primary: var(--color-base-jetblack);
+	--color-fg-muted: var(--color-base-graphite);
+	--color-surface-message-own: var(--color-base-goldenbronze);
+	--color-fg-message-own: var(--color-base-jetblack);
+	--color-surface-message-other: #ffffff;
+	--color-fg-message-other: var(--color-base-graphite);
+	--color-accent-primary: var(--color-base-goldenbronze);
+	--color-accent-primary-hover: #b99330;
+	--color-accent-contrast: var(--color-base-jetblack);
+}
+
+/* ========================= FONTS ========================= */
+@font-face {
+	font-family: Consola;
+	src: url(consola.ttf);
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: Consola;
+	src: url(consolab.ttf);
+	font-weight: 700;
+}
+
+/* =========================
+   GLOBAL PAGE LAYOUT
+   ========================= */
+body {
+	background: 
+    linear-gradient(
+        135deg,
+        var(--color-bg-app),
+        var(--color-bg-surface));
+    font-family: 'Consola', Roboto, Arial, sans-serif;
+}
+
+.auth-page {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+/* =========================
+   AUTH CONTAINER
+   ========================= */
+.auth-box {
+	width: 100%;
+	max-width: 380px;
+	padding: 32px 28px;
+	background: var(--color-bg-surface);
+	border-radius: 18px;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+	text-align: center;
+}
+
+/* =========================
+   HEADINGS
+   ========================= */
+.auth-box h1 {
+	margin: 0 0 6px;
+	font-size: 2em;
+	color: var(--color-accent-primary);
+	letter-spacing: 1px;
+}
+
+.auth-box h2 {
+	margin: 0 0 24px;
+	font-size: 1.2em;
+	font-weight: 400;
+	color: var(--color-fg-primary);
+}
+
+/* =========================
+   FORM
+   ========================= */
+.auth-box form {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.auth-box input {
+	padding: 12px 14px;
+	border-radius: 12px;
+	border: none;
+	font-size: 1em;
+	background: var(--color-bg-app);
+	color: var(--color-fg-primary);
+}
+
+.auth-box input::placeholder {
+	color: var(--color-fg-primary);
+}
+
+.auth-box input:focus {
+	outline: 2px solid var(--color-accent-primary);
+}
+
+/* =========================
+   BUTTON
+   ========================= */
+.auth-box button {
+	margin-top: 8px;
+	padding: 12px;
+	border-radius: 14px;
+	border: none;
+	background: var(--color-accent-primary);
+	color: var(--color-accent-contrast);
+	font-size: 1em;
+	font-weight: 700;
+	cursor: pointer;
+	transition: transform 0.12s ease, background 0.2s ease;
+}
+
+.auth-box button:hover {
+	background: var(--color-accent-primary-hover);
+	transform: translateY(-1px);
+}
+
+.auth-box button:active {
+	transform: translateY(0);
+}
+
+/* =========================
+   ERROR MESSAGE
+   ========================= */
+.auth-error {
+	margin-bottom: 16px;
+	padding: 10px 12px;
+	border-radius: 10px;
+	background: var(--color-surface-message-other);
+	color: var(--color-fg-message-other);
+	font-size: 0.9em;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.auth-footer {
+	margin-top: 18px;
+	font-size: 0.9em;
+	color: var(--color-fg-primary);
+}
+
+.auth-footer a {
+	color: var(--color-accent-primary);
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.auth-footer a:hover {
+	text-decoration: underline;
+}
