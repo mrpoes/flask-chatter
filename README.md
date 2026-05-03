@@ -2,7 +2,8 @@
 
 A WhatsApp-style real-time chat app built with Flask and SocketIO.
 
-![Login](demo/login.png) | ![Chat](demo/chat.png)
+![Login](demo/login.png)
+![Chat](demo/chat.png)
 
 ## Features
 
